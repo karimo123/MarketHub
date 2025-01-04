@@ -1,0 +1,93 @@
+<header class="absolute inset-x-0 top-0 z-50 bg-white shadow-sm">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="/" class="-m-1.5 p-1.5 flex items-center">
+          <span class="ml-2 text-xl font-semibold text-gray-900">MarketHub</span>
+        </a>
+      </div>
+  
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/buyer-page" class="text-sm font-semibold text-gray-900 mr-8">Buy</a>
+      </div>
+  
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/seller-page" class="text-sm font-semibold text-gray-900">Sell</a>
+      </div>
+  
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end items-center">
+        <ng-container *ngIf="isLoggedIn && showLogoutButton">
+          <p class="text-sm font-semibold text-gray-900 mr-4 flex items-center">
+            Credits: {{ credits | number:'1.0-2' }}
+          </p>
+          <ng-container *ngIf="isBuyer">
+            <button
+              class="text-sm font-semibold text-gray-900 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-indigo-600 focus:outline-none mr-4"
+              (click)="openCartModal()"
+            >
+              <i class="fas fa-shopping-cart"></i> Cart
+            </button>
+          </ng-container>
+          <button
+            class="text-sm font-semibold text-gray-900 bg-gray-100 px-4 py-2 rounded-md hover:bg-gray-200 focus:ring-2 focus:ring-indigo-600 focus:outline-none"
+            (click)="onLogout()"
+          >
+            Logout
+          </button>
+        </ng-container>
+      </div>
+    </nav>
+
+    <app-modal [title]="'Your Cart'" [show]="showCartModal" (close)="closeCartModal()">
+      <div *ngIf="cartItems.length > 0; else emptyCart">
+        <ul>
+          <li *ngFor="let item of cartItems" class="flex items-center justify-between py-2">
+            <div class="flex items-center">
+              <img [src]="item.imageUrl" alt="{{ item.title }}" class="w-16 h-16 rounded-md" />
+              <div class="ml-4">
+                <p class="font-semibold text-gray-700">{{ item.title }}</p>
+                <p class="text-sm text-gray-500">Price: ${{ item.price }}</p>
+                <div class="flex items-center space-x-2">
+                  <button
+                    class="px-2 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                    (click)="updateCartQuantity(item, item.quantity - 1)"
+                    [disabled]="item.quantity <= 1"
+                  >
+                    -
+                  </button>
+                  <p class="text-sm font-semibold text-gray-700">{{ item.quantity }}</p>
+                  <button
+                    class="px-2 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                    (click)="updateCartQuantity(item, item.quantity + 1)"
+                    [disabled]="item.quantity >= item.stock"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-4">
+              <p class="text-gray-700 font-medium">${{ item.price * item.quantity }}</p>
+              <button
+                class="text-red-600 hover:text-red-800"
+                (click)="removeFromCart(item.id)"
+              >
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+        <div class="flex justify-end mt-4">
+          <button
+            class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-500"
+            (click)="checkoutCart()"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+      <ng-template #emptyCart>
+        <p>Your cart is currently empty.</p>
+      </ng-template>
+    </app-modal>
+  </header>
+  

@@ -1,0 +1,9 @@
+/* Optional: Add some space and improve layout */
+.group.relative {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .group:hover {
+    transform: scale(1.02);
+  }
+  
