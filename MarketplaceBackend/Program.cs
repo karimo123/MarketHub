@@ -12,14 +12,12 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp",
-       policy =>
-        {
-            policy.WithOrigins(
-                builder.Configuration.GetValue<string>("https://market-hub-ivory.vercel.app") ?? "http://localhost:4200"
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-        });
+        policy =>
+            {
+                policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+            });
 });
 
 builder.Services.AddDbContext<MarketplaceContext>(options =>
