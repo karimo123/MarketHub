@@ -47,6 +47,11 @@ namespace MarketplaceBackend.Controllers
                 }
             });
 
+            if (!response.IsSuccessStatusCode)
+            {
+                return BadRequest(new { message = "Error: " + responseBody });
+            }
+
             var responseBody = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
