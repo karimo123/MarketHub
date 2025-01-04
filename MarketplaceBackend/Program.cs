@@ -49,6 +49,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 
+
+var actualConn = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine($"DEBUG: My actual connection string is: {actualConn}");
+
+
 var app = builder.Build();
 
 app.UseCors("AllowAngularApp");
