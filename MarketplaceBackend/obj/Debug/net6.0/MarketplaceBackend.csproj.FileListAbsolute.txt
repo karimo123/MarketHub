@@ -45,3 +45,10 @@
 /Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/obj/Debug/net6.0/MarketplaceBackend.pdb
 /Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/obj/Debug/net6.0/MarketplaceBackend.genruntimeconfig.cache
 /Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/obj/Debug/net6.0/ref/MarketplaceBackend.dll
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/web.config
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/appsettings.Development.json
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/appsettings.json
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/appsettings.Production.json
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/MarketplaceBackend.deps.json
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/MarketplaceBackend.runtimeconfig.json
+/Users/karimgheriani/Desktop/Marketplace/MarketplaceBackend/bin/Debug/net6.0/out/MarketplaceBackend.staticwebassets.endpoints.json
