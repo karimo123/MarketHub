@@ -37,7 +37,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidIssuer = builder.Configuration.GetValue<string>("Supabase:ApiUrl"),
+            ValidIssuer = builder.Configuration.GetValue<string>("Supabase:ApiUrl") + "/auth/v1",
             ValidateIssuer = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey)),
             ValidAudience = "authenticated",
