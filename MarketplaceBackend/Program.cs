@@ -15,7 +15,7 @@ builder.Services.AddCors(options =>
        policy =>
         {
             policy.WithOrigins(
-                builder.Configuration.GetValue<string>("FrontendUrl") ?? "http://localhost:4200"
+                builder.Configuration.GetValue<string>("https://market-hub-ivory.vercel.app") ?? "http://localhost:4200"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
