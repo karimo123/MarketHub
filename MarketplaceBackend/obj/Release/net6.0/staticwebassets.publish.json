@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "aETk3n8kstytJGXk/QmDJIbm/TjQKnKwfAeu8efQjdE=",
+  "Source": "MarketplaceBackend",
+  "BasePath": "_content/MarketplaceBackend",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
