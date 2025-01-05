@@ -11,4 +11,11 @@ MarketHub is a marketplace platform designed to connect buyers and sellers. It p
 - **Key Functionalities**:
   - User registration with role-based metadata.
   - Basic marketplace operations like user management, CRUD for products, adding products to cart, buying products now, checking orders for both buyers and users, and transferring credits from buyer to seller.
-  - CORS-enabled API 
+  - CORS-enabled API
+ 
+## Deployment
+- MarketHub is deployed using Vercel for the frontend and Railway for the backend.
+
+### Links
+- Frontend Deployment: Vercel (vercel.com)
+- Backend Deployment: Railway (railway.com)
